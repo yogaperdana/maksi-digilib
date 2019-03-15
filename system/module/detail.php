@@ -129,7 +129,7 @@
 												echo $fdoc_enterpass1 . "<font color=red>Password salah, mohon cek kembali.</font><br><br>" . $fdoc_enterpass2;
 											} else {
 												if ($row_pfd['waktu'] == '0000-00-00 00:00:00') {
-													$sql_upf = "UPDATE `".TB_PWD."` SET `waktu` = NOW() WHERE `sandi` = '".$_POST['pass_fdoc']."'";
+													$sql_upf = "UPDATE `".TB_PWD."` SET `waktu` = '".date('Y-m-d H:i:s')."' WHERE `sandi` = '".$_POST['pass_fdoc']."'";
 													$res_upf = mysql_query($sql_upf) or die(mysql_error());
 													include('viewer.php'); //load viewer
 												} else {
